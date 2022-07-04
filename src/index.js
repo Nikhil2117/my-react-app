@@ -1,12 +1,33 @@
-import React from 'react'
-import ReactDom from 'react-dom'
+import React from 'react';
+import ReactDom from 'react-dom';
+import Card from "./Card";
+import './index.css'
+import Sdata from './sdata'
 
-const name = 'Nikhil Chaudhary'
+// function ncard(val){
+//     return(
+//     <Card
+//     imgsrc = {val.imgsrc}
+//     title = {val.title}
+//     sname = {val.sname}
+//     link = {val.link}
+//     />
+//     )
+// }
 
-ReactDom.render(
-    <>
-    <h1>Hello World.<br></br>This is {name}
-    <p>Hello Ji</p></h1>
-    
-    </>,
-document.getElementById('root'))
+ReactDom.render(<>
+                    <h1 className='heading_style'>List of Top Anime</h1>
+                    {Sdata.map((val) =>{
+                        return(
+                            <Card
+                                imgsrc = {val.imgsrc}
+                                title = {val.title}
+                                sname = {val.sname}
+                                link = {val.link}
+                            />
+                        )
+                    })
+                    }
+                </>,
+                document.getElementById('root')
+)
